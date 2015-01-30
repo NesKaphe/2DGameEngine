@@ -3,6 +3,10 @@ package core.animations
 import graphics.sprites.Sprite
 import graphics.sprites.AnimatedSprite
 
+/**
+ * SpritePlayer provides a simple way to start sprite animations.
+ * If a sprite doesn't contains an animation, nothing will happen
+ */
 object SpritePlayer {
   def animate(sprite : Sprite) : Unit = {
     sprite match {
