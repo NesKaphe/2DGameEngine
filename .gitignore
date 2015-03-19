@@ -16,3 +16,9 @@ project/plugins/project/
 .scala_dependencies
 .worksheet
 /bin/
+
+#eclipse
+.cache
+.classpath
+.project
+*.prefs
