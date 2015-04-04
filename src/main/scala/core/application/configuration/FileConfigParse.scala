@@ -38,6 +38,7 @@ private[configuration] trait FileConfigParse extends GenConfig {
     } catch {
       case e : java.io.FileNotFoundException => 
         {
+          println("lol")
           return None
         }
       case e : java.lang.NumberFormatException => 

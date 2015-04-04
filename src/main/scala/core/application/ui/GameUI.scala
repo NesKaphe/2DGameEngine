@@ -8,9 +8,9 @@ import java.awt.BorderLayout
 
 class GameUI(val app: Application) {
 
-  private val gameWindow : JFrame = new JFrame(app title)
-  private val gamePanel : GameSurface = new GameSurface(app.gameWidth,
-                                                        app.gameHeight)
+  private val gameWindow : JFrame = new JFrame(app.config.gameTitle)
+  private val gamePanel : GameSurface = new GameSurface(app.config.widthRes,
+                                                        app.config.heightRes)
   
   
   //Game window configuration for the game

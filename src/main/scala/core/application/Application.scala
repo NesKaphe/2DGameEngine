@@ -4,18 +4,16 @@ import core.utils.Clock
 import core.application.ui.GameUI
 import core.application.configuration.AppConfig
 import game.states.GameState
+import core.application.configuration.AppConfigMaker
+import java.io.FileNotFoundException
 
 /*
  * This class is a little messy for now
  * TODO: cleaner code
  */
-class Application(config: AppConfig) {
-
-  val title = "TODO"
-  val gameWidth : Int = 640 //TODO: get from the configuration
-  val gameHeight : Int = 480 //TODO: get from the configuration
+sealed class Application(val config: AppConfig) {
   
-  private val clock = new Thread(new Clock (1, this))
+  private val clock = new Thread(new Clock (config.targetFPS, this))
   
   private val ui = new GameUI(this)
   
@@ -33,8 +31,23 @@ class Application(config: AppConfig) {
   
 }
 
-object test {
-  def main(args : Array[String]) {
-    val appli = new Application(null)
+
+object Application {
+  
+  /*
+   * We can get an Application object by giving the path to a file
+   * containing the configuration 
+   */
+  def apply(pathConfigFile : String) = {
+    val config = AppConfigMaker loadFromFilePath(pathConfigFile)
+    config match {
+      case Some(conf) => new Application(conf)
+      case _          => throw new FileNotFoundException
+    }
+  }
+  
+  
+  def main(args: Array[String]) {
+    val app = Application(getClass.getResource("/config/config.conf").getPath)
   }
 }
