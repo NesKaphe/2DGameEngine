@@ -1,5 +1,7 @@
 package core.utils
 
+import scala.language.postfixOps
+
 import core.application._
 import scala.swing._
 import swing._

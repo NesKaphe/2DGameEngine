@@ -1,5 +1,7 @@
 package core.animations
 
+import scala.language.postfixOps
+
 import graphics.sprites.Sprite
 import graphics.sprites.AnimatedSprite
 

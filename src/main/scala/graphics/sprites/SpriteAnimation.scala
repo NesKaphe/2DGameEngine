@@ -1,5 +1,7 @@
 package graphics.sprites
 
+import scala.language.postfixOps
+
 import core.utils.idGenerator
 import core.utils.TimedChain
 

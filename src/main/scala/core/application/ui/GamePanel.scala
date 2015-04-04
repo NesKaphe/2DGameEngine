@@ -1,5 +1,7 @@
 package core.application.ui
 
+import scala.language.postfixOps
+
 import game.states.GameState
 import javax.swing.JPanel
 import java.awt.Dimension

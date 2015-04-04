@@ -1,5 +1,7 @@
 package core.application
 
+import scala.language.postfixOps
+
 import core.utils.Clock
 import core.application.ui.GameUI
 import core.application.configuration.AppConfig

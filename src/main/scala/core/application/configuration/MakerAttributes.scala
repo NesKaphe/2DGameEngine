@@ -2,9 +2,9 @@ package core.application.configuration
 
 private[configuration] trait MakerAttributes {
   
-  private var _gameTitle : Option[String] = None
+  private var _gameTitle : Option[String]         = None
   private var _gameResolution : Option[(Int,Int)] = None
-  private var _targetFPS : Option[Int] = None
+  private var _targetFPS : Option[Int]            = None
     
   def setGameTitle (title: String) : Unit = {
     
@@ -27,6 +27,12 @@ private[configuration] trait MakerAttributes {
     if(fps > 0)
       _targetFPS = Some(fps)
       
+  }
+  
+  private[configuration] def resetAttributes = {
+    _gameTitle      = None
+    _gameResolution = None
+    _targetFPS      = None
   }
   
   def gameTitle      = _gameTitle

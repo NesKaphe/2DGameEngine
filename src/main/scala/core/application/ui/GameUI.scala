@@ -1,5 +1,7 @@
 package core.application.ui
 
+import scala.language.postfixOps
+
 import core.application.Application
 import core.application.ui.listener.UserInput
 import game.states.GameState

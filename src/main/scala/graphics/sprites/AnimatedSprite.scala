@@ -1,5 +1,7 @@
 package graphics.sprites
 
+import scala.language.postfixOps
+
 import java.awt.Graphics2D
 import core.animations.Animator
 import core.animations.SpritePlayer

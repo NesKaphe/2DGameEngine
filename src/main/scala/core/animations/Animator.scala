@@ -1,5 +1,7 @@
 package core.animations
 
+import scala.language.postfixOps
+
 import core.utils.Chain
 
 object Animator {

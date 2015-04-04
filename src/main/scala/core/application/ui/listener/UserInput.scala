@@ -1,5 +1,7 @@
 package core.application.ui.listener
 
+import scala.language.postfixOps
+
 import core.application.ui.GameUI
 import java.awt.event.KeyEvent
 import java.awt.event.KeyAdapter
