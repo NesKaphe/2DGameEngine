@@ -20,7 +20,7 @@ private[configuration] trait FileConfigParse extends GenConfig {
             
             val split = line split("=")
             
-            if(split.length > 2)
+            if(split.length != 2)
               return None
               
             split(0) match {
