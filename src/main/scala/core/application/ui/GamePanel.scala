@@ -1,13 +1,13 @@
 package core.application.ui
 
 import scala.language.postfixOps
-
 import game.states.GameState
 import javax.swing.JPanel
 import java.awt.Dimension
 import java.awt.Image
 import java.awt.Graphics
 import java.awt.Graphics2D
+import graphics.sprites.spritesheet.SpriteSheetLoader
 
 final class GameSurface private[ui] (width: Int, height: Int) {
 
@@ -40,7 +40,7 @@ final class GameSurface private[ui] (width: Int, height: Int) {
      }
      
      val gBuf = backBuffer.getGraphics().asInstanceOf[Graphics2D]
-     state render(gBuf)
+     state render(gBuf)     
      gBuf dispose
      
      panel repaint()

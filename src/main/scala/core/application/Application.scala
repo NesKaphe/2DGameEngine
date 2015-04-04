@@ -1,13 +1,13 @@
 package core.application
 
 import scala.language.postfixOps
-
 import core.utils.Clock
 import core.application.ui.GameUI
 import core.application.configuration.AppConfig
 import game.states.GameState
 import core.application.configuration.AppConfigMaker
 import java.io.FileNotFoundException
+import graphics.sprites.spritesheet.SpriteSheetLoader
 
 /*
  * This class is a little messy for now
@@ -33,7 +33,6 @@ sealed class Application(val config: AppConfig) {
   
 }
 
-
 object Application {
   
   /*
@@ -51,5 +50,7 @@ object Application {
   
   def main(args: Array[String]) {
     val app = Application(getClass.getResource("/config/config.conf").getPath)
+    val spritesheet = SpriteSheetLoader.loadFromFile(getClass.getResource("/tileset/chemin.png").getPath, 32, 32)
+    println(spritesheet)
   }
 }
